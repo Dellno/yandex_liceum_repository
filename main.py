@@ -6,7 +6,6 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5 import uic
 
-
 class Mein_app(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -31,13 +30,12 @@ class Mein_app(QMainWindow):
 
     def self_draw_circle(self, qp):
         radius = randint(20, 100)
-        qp.setBrush(QColor(250, 255, 87))
+        qp.setBrush(QColor(randint(0, 255), randint(0, 255), randint(0, 255)))
         qp.drawEllipse(randint(10, 300), randint(10, 300), radius, radius)
 
     def du_paint_true(self):
         self.update()
         self.do_paint = True
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
